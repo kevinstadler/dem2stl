@@ -1,0 +1,16 @@
+Package: dem2stl
+Title: Creating arbitrarily shaped .stl files with correct earth curvature
+Description: 
+Version: 1.0
+Authors@R: person("Kevin", "Stadler", email="kevin.stadler@ed.ac.uk", role=c("aut", "cre"))
+URL: https://github.com/kevinstadler/dem2stl
+BugReports: https://github.com/kevinstadler/dem2stl/issues
+License: MIT + file LICENSE
+Imports:
+    raster,
+    rgl
+Suggests:
+    rgdal,
+    sp
+VignetteBuilder: knitr
+RoxygenNote: 6.0.1
