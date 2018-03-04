@@ -26,8 +26,13 @@ nl <- raster::raster("NLD_msk_alt.grd")
 # Netherlands into two separated landmasses, with only the biggest rendered)
 nl <- raster::aggregate(nl, 2, fun=max)
 
-# render to 10x10cm max, with a thin base
+# turn DEM into 3d mesh, setting maximum model extent in units (interpreted as mm by most printers), and a thin base plate
 m <- dem2stl::dem2mesh(nl, size=100, thicknessratio=0.001)
+
+# inspect model on the screen
+rgl::shade3d(m)
+
+# write model to .stl on disk
 dem2stl::mesh2stl("nederland.stl", m)
 ```
 
